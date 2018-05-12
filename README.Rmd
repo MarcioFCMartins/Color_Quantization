@@ -10,7 +10,7 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.width = 10)
 source("./scripts/helper_functions.R")
 library(scales)
 library(jpeg)
@@ -28,6 +28,36 @@ https://en.wikipedia.org/wiki/Median_cut
 
 This implementation is of the most basic version of the algorithm, meaning color palettes will always have a number of colors that is base 2 *(TODO: change the cut function to only apply to the bucket with highest range of colors to allow the creation of palletes with any number of colors)*.
 
-Here is the result:
+Here are some of the color palettes created using this method, and corresponding original images.
 
-```{r images}
+##Results  
+
+###Forest  
+
+![](test_images/a.jpg)
+
+```{r}
+image_a <- quantize_colors("./test_images/a.jpg")
+show_col(image_a)
+```
+
+###Desert
+![](test_images/b.jpg)
+```{r}
+image_b <- quantize_colors("./test_images/b.jpg", ncolor = 4)
+show_col(image_b)
+```
+
+###Canigiani Holy Family
+![](test_images/c.jpg)
+```{r}
+image_c <- quantize_colors("./test_images/c.jpg")
+show_col(image_c)
+```
+
+###Doctor Who - Van Gogh styled
+![](test_images/d.jpg)
+```{r}
+image_d <- quantize_colors("./test_images/d.jpg", ncolor = 16)
+show_col(image_d)
+```

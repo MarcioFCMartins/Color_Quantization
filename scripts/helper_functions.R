@@ -35,7 +35,12 @@ average_color <- function(group){
 }
 
 #Bring it all together to quantize
-quantize_colors <- function(image, ncolor = 8){
+quantize_colors <- function(image_path, ncolor = 8){
+  image <- readJPEG(image_path)
+  image <- list(list("red"   = as.vector(image[,,1]), 
+                     "green" = as.vector(image[,,2]), 
+                     "blue"  = as.vector(image[,,3])))
+  
   #Number of cycles to calculate enough colors (number of calculated averages is always base 2)
   cycle_stop <- ceiling(log2(ncolor))
   cycle <- 0
