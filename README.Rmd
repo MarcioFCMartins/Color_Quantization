@@ -21,7 +21,6 @@ This is a small personal project inspired by some blog posts (see below). The ma
 
 While reading the posts about how the author of the PaletteR package tries to not only maximize how well a palette represents an image, but also make sure that colors are as distinguishable as possible, I decided to read up on how color quantization is normally performed. One of the most widely mentioned (and simpler) algorithms was called median cut. It seemed relatively simple and I decided to try and implement in in R.
 
-
 Blog posts that lead to this project:
 http://www.milanor.net/blog/build-color-palette-from-image-with-paletter/
 https://datascienceplus.com/how-to-use-paletter-to-automagically-build-palettes-from-pictures/
